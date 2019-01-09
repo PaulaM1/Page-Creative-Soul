@@ -1,0 +1,257 @@
+//czyszczenie i centrowanie strony
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.container{
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-right:15px;
+  padding-left:15px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+
+  .row{
+    margin: 10px 0;
+
+    @for $i from 1 through 12{
+      .col-#{$i}{
+        padding:10px 15px;
+        margin: 10px 0;
+
+        @media screen and (min-width: 640px){
+          float:left;
+          width: (100%/12) * $i;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+$font-headers: 'Radley', serif;; //czcionka dla nagłówków i list
+$font-text:'Space Mono', monospace;
+$color-orange: #F04D23;
+
+
+//ogólne selektory od html
+body{
+  font-family: Space-Mono, sans-serif;
+}
+
+h2{
+  font-size: 40px;
+  color: #000000;
+  font-family: $font-headers;
+}
+
+h3{
+  font-size: 24px;
+  color: $color-orange;
+  font-family: $font-headers;
+}
+
+h1,h2,h3{
+  font-weight: normal;
+}
+
+img{
+  max-width: 100%;
+}
+
+//selektory od class
+.first_header{
+  background-image: url("../img/banner.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a{
+    font-family: $font-text;
+  }
+  a:hover{
+
+    color: deeppink;
+  }
+
+  p{
+    font-family: $font-text;
+    font-size: 18px;
+  }
+}
+
+.main__navigation{
+  .main__navigation_list{
+    list-style: none;
+    position: fixed;
+    top: 45px;
+    left: 560px;
+    z-index: 2;
+    li{
+      display: inline-block;
+      a{
+        text-decoration: none;
+        padding: 20px 40px;
+        margin: 15px;
+        color: #000000;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.main__header{
+  color:#ffffff;
+  font-size: 200px;
+  font-family: $font-headers;
+}
+
+.header__info{
+  color:#ffffff;
+  font-size: 18px;
+}
+
+.first_header{
+  position: relative;
+  .first_header_layout{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    font-family: $font-text;
+    font-size: 14px;
+    color: #ffffff;
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+  }
+}
+
+.first__header_text{
+  position:relative;
+  height:500px;
+  width: 100%;
+}
+
+.article__about_header{
+  font-size: 100px;
+  font-family: $font-headers;
+  color: #000000;
+}
+
+.article__intro_text{
+  h2{
+    padding: 60px 10px 10px 10px;
+  }
+  p{
+    font-size: 14px;
+    font-family: $font-text;
+  }
+  li, a{
+    font-size: 15px;
+    font-family: $font-text;
+  }
+  li{
+    list-style: none;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+  }
+  a{
+    color: $color-orange;
+    font-size: 15px;
+  }
+  .list_link{
+    padding: 30px 15px;
+  }
+}
+
+.article__projects{
+  p{
+    font-size: 14px;
+    font-family: $font-text;
+    padding: 20px;
+  }
+  h3{
+    padding:15px;
+  }
+}
+
+.article__about_photos{
+    a {
+      font-size: 15px;
+      font-family: $font-text;
+      color: $color-orange;
+    }
+  }
+
+.article__about_touch{
+  padding: 60px;
+  p{
+    font-size: 15px;
+    font-family: $font-text;
+  }
+}
+
+
+.article__intro_photo {
+  position:relative;
+  ::after {
+    content: url("../img/cross.svg");
+    position: absolute;
+    width: 250px;
+    z-index: -2;
+    left:-140px;
+    top:-40px;
+  }
+}
+
+  .main__footer{
+    font-size: 14px;
+    font-family: $font-text;
+    padding: 40px;
+    background-color: #F2F2F2;
+    text-align: center;
+    a{
+      color: $color-orange;
+      text-decoration: underline;
+    }
+  }
+
+  .social_icons{
+    position: absolute;
+    padding-top: 150px;
+    img{
+      width:50px;
+      height: 50px;
+
+    }
+  }
+
+.article__about_touch{
+    text-align: center;
+    h1{
+      position: relative;
+    }
+    h1::after{
+      content: "";
+      display: inline-block;
+      background-image: url("../img/line.svg");
+      background-repeat: no-repeat;
+      width: 1000px;
+      height:50px;
+      position: absolute;
+      z-index: -1;
+      top:65px;
+      right:-50px;
+    }
+    p{
+      margin: 25px;
+      font-size: 18px;
+    }
+}
+
